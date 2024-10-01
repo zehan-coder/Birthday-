@@ -1,0 +1,219 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap');
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Parallax Header with Balloons */
+header.parallax {
+    background-image: url('images/header-background.jpg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header .text-container {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+header .btn {
+    padding: 15px 30px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+header .btn:hover {
+    background-color: #ff3b2e;
+    transform: translateY(-5px);
+}
+
+/* Balloons Animation */
+.balloons img {
+    position: absolute;
+    width: 100px;
+    animation: float 6s infinite ease-in-out;
+}
+
+.balloon1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.balloon3 {
+    left: 80%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Birthday Cake */
+.cake {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cake-img {
+    width: 200px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Photo Slideshow */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Message Section with Fade-In Effect */
+.message {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    opacity: 0;
+}
+
+.message h2 {
+    color: #ff6f61;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.message p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+}
+
+/* Footer Section */
+footer {
+    background-color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 2px solid #fcb69f;
+}
+
+footer p {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .gallery h2, .message h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+        header h1 {
+                font-size: 2.5em;
+            }
+
+            .balloons img {
+                width: 80px;
+            }
+
+            .cake-img {
+                width: 150px;
+            }
+        }
